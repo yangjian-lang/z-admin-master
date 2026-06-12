@@ -33,6 +33,18 @@ export default defineConfig(({ command, mode }) => {
       vue(),
       AutoImport({
         resolvers: [ElementPlusResolver()],
+        include: [
+          /\.[tj]sx?$/,
+          /\.vue$/,
+          /\.vue\?vue/,
+        ],
+        imports: [
+          'vue',
+          'vue-router',
+          {
+            '@element-plus/icons-vue': ['*']
+          }
+        ]
       }),
       Components({
         resolvers: [ElementPlusResolver()],
